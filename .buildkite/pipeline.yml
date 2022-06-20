@@ -7,3 +7,6 @@ steps:
             - path: .buildkite/get-path.sh
               config:
                 command: 'echo deploy-bar'
+            - path: '**/*.md'
+              config:
+                command: 'skip pr'
