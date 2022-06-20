@@ -1,6 +1,5 @@
 steps:
   - label: 'Triggering pipelines'
-    command: 'echo .buildkite/diff-exclude-md-files.sh'
     if: |
       (build.pull_request.base_branch == "main" ||
       build.pull_request.base_branch == "test_ci") &&
@@ -12,6 +11,7 @@ steps:
             - path: .buildkite/get-path.sh
               config:
                 command: 'echo deploy-bar'
-            - path: '**/*.md'
+          watch:
+            - path: "**/*.md"
               config:
-                command: 'echo skip-pr'
+                command: 'echo SKIPPING_______RP'
