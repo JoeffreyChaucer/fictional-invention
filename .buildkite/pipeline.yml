@@ -4,6 +4,5 @@ steps:
       - chronotc/monorepo-diff#v2.3.0:
           diff: .buildkite/diff-exclude-md-files.sh
           watch:
-            - path: 'buildkite-agent meta-data get BUILDKITE_BRANCH'
-              config:
+            - config:
                 command: 'echo deploy-bar'
