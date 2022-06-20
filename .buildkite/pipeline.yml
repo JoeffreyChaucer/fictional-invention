@@ -1,5 +1,9 @@
 steps:
   - label: 'Triggering pipelines'
+     if: |
+      (build.pull_request.base_branch == "main" ||
+      build.pull_request.base_branch == "test_ci") &&
+      !build.pull_request.draft
     plugins:
       - chronotc/monorepo-diff#v2.3.0:
           diff: .buildkite/diff-exclude-md-files.sh
