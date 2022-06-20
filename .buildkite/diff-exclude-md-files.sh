@@ -7,4 +7,4 @@ prBranch=${BUILDKITE_BRANCH:-}
 echo $baseBranch
 echo $prBranch
 
-git diff $baseBranch..$prBranch --name-only -- ':!*.md'
+git diff $baseBranch --name-only -- ':!*.md'
