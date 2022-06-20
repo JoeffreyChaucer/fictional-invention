@@ -1,5 +1,6 @@
 steps:
   - label: 'Triggering pipelines'
+    command: 'echo .buildkite/diff-exclude-md-files.sh'
     if: |
       (build.pull_request.base_branch == "main" ||
       build.pull_request.base_branch == "test_ci") &&
